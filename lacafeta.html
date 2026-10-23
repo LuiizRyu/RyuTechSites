@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Vintage "La Cafeta" | Cafetería & Postres en Real de Tultepec</title>
+    <meta name="description" content="Disfruta del mejor café de especialidad, crepas artesanales, waffles y aperitivos en un ambiente cálido y vintage en Real de Tultepec.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            50: '#FAF6F0',
+                            100: '#F4ECE1',
+                            200: '#E6D5C3',
+                            300: '#D5BAA0',
+                            400: '#C29B7A',
+                            500: '#A37754',
+                            600: '#845A38',
+                            700: '#664225',
+                            800: '#472B15',
+                            900: '#2A170A',
+                            950: '#1A0D05'
+                        },
+                        amberGold: '#E6A15C',
+                        cozyDark: '#1E1611',
+                        cardDark: '#2B2019'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #1E1611; color: #F4ECE1; }
+        h1, h2, h3, .font-serif-vintage { font-family: 'Playfair Display', serif; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-amberGold selection:text-coffee-950">
+
+    <!-- Header Fijo -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-coffee-950/90 backdrop-blur-md border-b border-coffee-800/40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-amberGold/20 border border-amberGold/40 flex items-center justify-center text-amberGold text-xl group-hover:scale-105 transition">
+                    ☕
+                </div>
+                <div>
+                    <span class="font-serif-vintage text-xl font-bold tracking-wide text-coffee-50 block leading-tight">La Cafeta</span>
+                    <span class="text-[10px] tracking-widest text-amberGold uppercase font-semibold">Café Vintage</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-coffee-200">
+                <a href="#menu" class="hover:text-amberGold transition">Menú</a>
+                <a href="#nosotros" class="hover:text-amberGold transition">Ambiente</a>
+                <a href="#opiniones" class="hover:text-amberGold transition">Reseñas</a>
+                <a href="#contacto" class="hover:text-amberGold transition">Ubicación</a>
+            </nav>
+
+            <a href="https://wa.me/525560126049?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20para%20llevar" target="_blank" class="bg-amberGold hover:bg-amber-600 text-coffee-950 font-bold px-4 py-2 rounded-xl text-xs md:text-sm flex items-center gap-2 transition shadow-lg shadow-amberGold/10">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>Pedir por WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 px-4 text-center relative overflow-hidden bg-gradient-to-b from-coffee-950 via-cozyDark to-cozyDark">
+        <div class="max-w-3xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-coffee-900/80 border border-amberGold/30 text-amberGold text-xs font-semibold mb-6 shadow-inner">
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <span>4.4 en Google Maps (66 opiniones)</span>
+                <span class="text-coffee-300">• Real de Tultepec</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-bold text-coffee-50 mb-4 font-serif-vintage leading-tight">
+                Tu rincón acogedor en Real de Tultepec
+            </h1>
+            <p class="text-coffee-200 text-base md:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+                El lugar perfecto para pasar un momento agradable. Disfruta de buen café de grano, crepas artesanales, waffles crujientes y baguettes preparadas al momento.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                <a href="#menu" class="bg-amberGold hover:bg-amber-600 text-coffee-950 font-bold px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-amberGold/10">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <span>Ver Menú Digital</span>
+                </a>
+                <a href="tel:5560126049" class="bg-cardDark hover:bg-coffee-800 border border-coffee-700 text-coffee-100 font-semibold px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Llamar al Local</span>
+                </a>
+            </div>
+
+            <div class="inline-flex items-center gap-2 text-xs text-coffee-200 bg-coffee-900/60 px-4 py-2 rounded-xl border border-coffee-800/60">
+                <i class="fa-regular fa-clock text-amberGold"></i>
+                <span>Abre a las <strong>6:00 p.m.</strong> • Consumo en el lugar y Para llevar</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destacados / Características -->
+    <section id="nosotros" class="py-12 px-4 border-y border-coffee-800/40 bg-coffee-950/40">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="p-5 rounded-2xl bg-cardDark border border-coffee-800/50 hover:border-amberGold/30 transition">
+                <div class="w-12 h-12 rounded-xl bg-amberGold/10 text-amberGold text-2xl mx-auto flex items-center justify-center mb-3">☕</div>
+                <h3 class="font-serif-vintage text-base font-bold text-coffee-50">Café de Grano</h3>
+                <p class="text-xs text-coffee-300 mt-1">Capuchinos, lattes y frappés</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-cardDark border border-coffee-800/50 hover:border-amberGold/30 transition">
+                <div class="w-12 h-12 rounded-xl bg-amberGold/10 text-amberGold text-2xl mx-auto flex items-center justify-center mb-3">🧇</div>
+                <h3 class="font-serif-vintage text-base font-bold text-coffee-50">Waffles & Crepas</h3>
+                <p class="text-xs text-coffee-300 mt-1">Con fruta fresca y toppings</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-cardDark border border-coffee-800/50 hover:border-amberGold/30 transition">
+                <div class="w-12 h-12 rounded-xl bg-amberGold/10 text-amberGold text-2xl mx-auto flex items-center justify-center mb-3">🥪</div>
+                <h3 class="font-serif-vintage text-base font-bold text-coffee-50">Wraps & Baguettes</h3>
+                <p class="text-xs text-coffee-300 mt-1">Porciones generosas y ricas</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-cardDark border border-coffee-800/50 hover:border-amberGold/30 transition">
+                <div class="w-12 h-12 rounded-xl bg-amberGold/10 text-amberGold text-2xl mx-auto flex items-center justify-center mb-3">🛋️</div>
+                <h3 class="font-serif-vintage text-base font-bold text-coffee-50">Ambiente Vintage</h3>
+                <p class="text-xs text-coffee-300 mt-1">Decoración hermosa y tranquila</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú Interactivo -->
+    <section id="menu" class="py-16 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold font-serif-vintage text-coffee-50 mb-3">Nuestra Carta</h2>
+            <p class="text-coffee-300 text-sm max-w-md mx-auto">Selecciona una categoría o busca tu antojo favorito.</p>
+        </div>
+
+        <!-- Buscador de Platillos -->
+        <div class="max-w-md mx-auto mb-8 relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-coffee-400"></i>
+            <input type="text" id="searchInput" onkeyup="searchMenu()" placeholder="Buscar café, crepa, waffle, wrap..." class="w-full bg-cardDark border border-coffee-700/60 rounded-xl pl-11 pr-4 py-3 text-sm text-coffee-50 placeholder-coffee-400 focus:outline-none focus:border-amberGold transition">
+        </div>
+
+        <!-- Filtros de Categoría -->
+        <div class="flex justify-center gap-2 mb-8 overflow-x-auto pb-2 scrollbar-hide">
+            <button onclick="filterMenu('all', this)" class="menu-tab bg-amberGold text-coffee-950 font-bold px-5 py-2.5 rounded-xl text-xs md:text-sm whitespace-nowrap transition shadow-md">Todos</button>
+            <button onclick="filterMenu('cafe', this)" class="menu-tab bg-cardDark text-coffee-200 hover:text-coffee-50 border border-coffee-800 font-semibold px-5 py-2.5 rounded-xl text-xs md:text-sm whitespace-nowrap transition">Café & Bebidas</button>
+            <button onclick="filterMenu('dulce', this)" class="menu-tab bg-cardDark text-coffee-200 hover:text-coffee-50 border border-coffee-800 font-semibold px-5 py-2.5 rounded-xl text-xs md:text-sm whitespace-nowrap transition">Waffles & Crepas</button>
+            <button onclick="filterMenu('salado', this)" class="menu-tab bg-cardDark text-coffee-200 hover:text-coffee-50 border border-coffee-800 font-semibold px-5 py-2.5 rounded-xl text-xs md:text-sm whitespace-nowrap transition">Wraps & Salados</button>
+        </div>
+
+        <!-- Grid de Menú -->
+        <div class="grid md:grid-cols-2 gap-4" id="menu-container">
+            
+            <div class="menu-item cafe bg-cardDark p-5 rounded-2xl border border-coffee-800/60 flex justify-between items-start cursor-pointer hover:border-amberGold/40 transition" onclick="openModal('Cappuccino Caramelo', 'Espresso espeso preparado con grano tostado, leche cremada al vapor y jarabe de caramelo artesanal.', '$55')">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="font-bold text-coffee-50 text-base item-title">Cappuccino Caramelo</h3>
+                        <span class="text-[10px] bg-amberGold/20 text-amberGold px-2 py-0.5 rounded font-semibold">Especialidad</span>
+                    </div>
+                    <p class="text-xs text-coffee-300 leading-relaxed">Espresso espeso preparado con grano tostado, leche cremada al vapor y jarabe de caramelo artesanal.</p>
+                </div>
+                <span class="font-bold text-amberGold text-base ml-4">$55</span>
+            </div>
+
+            <div class="menu-item dulce bg-cardDark p-5 rounded-2xl border border-coffee-800/60 flex justify-between items-start cursor-pointer hover:border-amberGold/40 transition" onclick="openModal('Waffle con Fresas y Cappuccino', 'Combinación estelar: Waffle crujiente recién horneado con fresas frescas, crema batida y un cappuccino calientito.', '$120')">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="font-bold text-coffee-50 text-base item-title">Waffle con Fresas y Cappuccino</h3>
+                        <span class="text-[10px] bg-amberGold/20 text-amberGold px-2 py-0.5 rounded font-semibold">Paquete Favorito</span>
+                    </div>
+                    <p class="text-xs text-coffee-300 leading-relaxed">Combinación estelar: Waffle crujiente recién horneado con fresas frescas, crema batida y un cappuccino calientito.</p>
+                </div>
+                <span class="font-bold text-amberGold text-base ml-4">$120</span>
+            </div>
+
+            <div class="menu-item dulce bg-cardDark p-5 rounded-2xl border border-coffee-800/60 flex justify-between items-start cursor-pointer hover:border-amberGold/40 transition" onclick="openModal('Crepa Especial de Nutella', 'Crepa delgada y suave rellena de queso crema, Nutella, rebanadas de plátano o fresa y topping de nuez.', '$75')">
+                <div>
+                    <h3 class="font-bold text-coffee-50 text-base item-title">Crepa Especial de Nutella</h3>
+                    <p class="text-xs text-coffee-300 leading-relaxed mt-1">Crepa delgada y suave rellena de queso crema, Nutella, rebanadas de plátano o fresa y topping de nuez.</p>
+                </div>
+                <span class="font-bold text-amberGold text-base ml-4">$75</span>
+            </div>
+
+            <div class="menu-item salado bg-cardDark p-5 rounded-2xl border border-coffee-800/60 flex justify-between items-start cursor-pointer hover:border-amberGold/40 transition" onclick="openModal('Wrap Clásico de Pollo', 'Tortilla de harina suave rellena de fajitas de pollo sazonadas, queso derretido, lechuga y aderezo especial.', '$85')">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="font-bold text-coffee-50 text-base item-title">Wrap Clásico de Pollo</h3>
+                        <span class="text-[10px] bg-amberGold/20 text-amberGold px-2 py-0.5 rounded font-semibold">Popular</span>
+                    </div>
+                    <p class="text-xs text-coffee-300 leading-relaxed">Tortilla de harina suave rellena de fajitas de pollo sazonadas, queso derretido, lechuga y aderezo especial.</p>
+                </div>
+                <span class="font-bold text-amberGold text-base ml-4">$85</span>
+            </div>
+
+            <div class="menu-item cafe bg-cardDark p-5 rounded-2xl border border-coffee-800/60 flex justify-between items-start cursor-pointer hover:border-amberGold/40 transition" onclick="openModal('Café Americano de Grano', 'Extracción pura de mezcla de granos mexicanos seleccionados con aroma equilibrado.', '$40')">
+                <div>
+                    <h3 class="font-bold text-coffee-50 text-base item-title">Café Americano de Grano</h3>
+                    <p class="text-xs text-coffee-300 leading-relaxed mt-1">Extracción pura de mezcla de granos mexicanos seleccionados con aroma equilibrado.</p>
+                </div>
+                <span class="font-bold text-amberGold text-base ml-4">$40</span>
+            </div>
+
+            <div class="menu-item cafe bg-cardDark p-5 rounded-2xl border border-coffee-800/60 flex justify-between items-start cursor-pointer hover:border-amberGold/40 transition" onclick="openModal('Frappé Moka Choco', 'Bebida helada batida con espresso, chocolate espeso, leche y cubierta de crema batida.', '$68')">
+                <div>
+                    <h3 class="font-bold text-coffee-50 text-base item-title">Frappé Moka Choco</h3>
+                    <p class="text-xs text-coffee-300 leading-relaxed mt-1">Bebida helada batida con espresso, chocolate espeso, leche y cubierta de crema batida.</p>
+                </div>
+                <span class="font-bold text-amberGold text-base ml-4">$68</span>
+            </div>
+
+            <div class="menu-item salado bg-cardDark p-5 rounded-2xl border border-coffee-800/60 flex justify-between items-start cursor-pointer hover:border-amberGold/40 transition" onclick="openModal('Baguette Jamón y Queso', 'Pan baguette crujiente untado de mantequilla, jamón de pavo, queso manchego fundido y jitomate.', '$80')">
+                <div>
+                    <h3 class="font-bold text-coffee-50 text-base item-title">Baguette Jamón y Queso</h3>
+                    <p class="text-xs text-coffee-300 leading-relaxed mt-1">Pan baguette crujiente untado de mantequilla, jamón de pavo, queso manchego fundido y jitomate.</p>
+                </div>
+                <span class="font-bold text-amberGold text-base ml-4">$80</span>
+            </div>
+
+            <div class="menu-item dulce bg-cardDark p-5 rounded-2xl border border-coffee-800/60 flex justify-between items-start cursor-pointer hover:border-amberGold/40 transition" onclick="openModal('Crepa Salada Jamón y Queso', 'Crepa caliente rellena de doble queso manchego derretido y jamón.', '$70')">
+                <div>
+                    <h3 class="font-bold text-coffee-50 text-base item-title">Crepa Salada Jamón y Queso</h3>
+                    <p class="text-xs text-coffee-300 leading-relaxed mt-1">Crepa caliente rellena de doble queso manchego derretido y jamón.</p>
+                </div>
+                <span class="font-bold text-amberGold text-base ml-4">$70</span>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-8">
+            <p class="text-xs text-coffee-400 italic">* Consumo promedio estimado: $100 - $200 MXN por persona.</p>
+        </div>
+    </section>
+
+    <!-- Opiniones de Clientes -->
+    <section id="opiniones" class="py-16 px-4 bg-coffee-950/50 border-y border-coffee-800/40">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold font-serif-vintage text-coffee-50 mb-2">Lo que dicen en Google Maps</h2>
+                <div class="flex justify-center text-amber-400 gap-1 text-sm">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <span class="text-coffee-300 text-xs ml-2">4.4 / 5.0 (66 opiniones)</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-cardDark p-6 rounded-2xl border border-coffee-800/50 flex flex-col justify-between">
+                    <p class="text-xs text-coffee-200 italic mb-4 leading-relaxed">
+                        "El lugar es muy acogedor, la decoración es hermosa, las personas que atienden son muy amables. Recomiendo este lugar ya que sin duda pasarás un momento agradable."
+                    </p>
+                    <div class="border-t border-coffee-800/50 pt-3">
+                        <p class="text-xs font-bold text-coffee-50">Blanca Estela Molina</p>
+                        <p class="text-[10px] text-amberGold">Local Guide en Google</p>
+                    </div>
+                </div>
+
+                <div class="bg-cardDark p-6 rounded-2xl border border-coffee-800/50 flex flex-col justify-between">
+                    <p class="text-xs text-coffee-200 italic mb-4 leading-relaxed">
+                        "Desde que entras al lugar se siente un buen ambiente, la atención es de primera y nos sirvieron unos waffles y café exquisitos. Se nota el cambio positivo."
+                    </p>
+                    <div class="border-t border-coffee-800/50 pt-3">
+                        <p class="text-xs font-bold text-coffee-50">Alex Cervantes</p>
+                        <p class="text-[10px] text-amberGold">Cliente verificado</p>
+                    </div>
+                </div>
+
+                <div class="bg-cardDark p-6 rounded-2xl border border-coffee-800/50 flex flex-col justify-between">
+                    <p class="text-xs text-coffee-200 italic mb-4 leading-relaxed">
+                        "Excelente servicio, muy ricos los cafés y las crepas. Consideramos que nos sirvieron en buenas porciones y tuvimos muy buena atención."
+                    </p>
+                    <div class="border-t border-coffee-800/50 pt-3">
+                        <p class="text-xs font-bold text-coffee-50">Comunidad Tultepec</p>
+                        <p class="text-[10px] text-amberGold">Reseña en Google Maps</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación y Mapa Exacto -->
+    <section id="contacto" class="py-16 px-4 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <span class="text-amberGold text-xs font-semibold tracking-wider uppercase mb-2 block">Visítanos</span>
+                <h2 class="text-3xl font-bold font-serif-vintage text-coffee-50 mb-4">Ubicación y Contacto</h2>
+                
+                <div class="space-y-4 text-sm text-coffee-200 mb-6">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot text-amberGold text-lg mt-1"></i>
+                        <div>
+                            <p class="font-bold text-coffee-50">Dirección Exacta</p>
+                            <p class="text-xs leading-relaxed">Calle Hacienda Real de Tultepec Pte. 129 A, Hacienda Real de Tultepec, 54987 Santiago Teyahualco, Méx.</p>
+                            <p class="text-[10px] text-amberGold mt-1 font-mono">Plus Code: MV5M+87 Santiago Teyahualco, Estado de México</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-clock text-amberGold text-lg mt-1"></i>
+                        <div>
+                            <p class="font-bold text-coffee-50">Horario de Servicio</p>
+                            <p class="text-xs">Abre a las <strong>6:00 p.m.</strong> (Ideal para la merienda y cena)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone text-amberGold text-lg mt-1"></i>
+                        <div>
+                            <p class="font-bold text-coffee-50">Teléfono Directo</p>
+                            <a href="tel:5560126049" class="text-xs text-amberGold hover:underline font-semibold">55 6012 6049</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://maps.app.goo.gl/f3CipNRDkk8y4vh7A" target="_blank" class="bg-amberGold hover:bg-amber-600 text-coffee-950 font-bold px-5 py-3 rounded-xl text-xs transition flex items-center gap-2 shadow-lg shadow-amberGold/10">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Abrir en Google Maps</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mapa Integrado con Coordenadas Exactas -->
+            <div class="rounded-2xl overflow-hidden border border-coffee-800 shadow-2xl h-80 relative bg-cardDark">
+                <iframe 
+                    title="Ubicación Exacta Café Vintage La Cafeta"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d939.3402484080126!2d-99.1168603!3d19.6583358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f5eeca63734f%3A0xb42daa8a81c062b1!2sCaf%C3%A9%20Vintage%20%22La%20Cafeta%22!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; filter: contrast(1.05);" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-950 border-t border-coffee-800/60 py-8 text-center text-xs text-coffee-400">
+        <div class="max-w-5xl mx-auto px-4">
+		<p>Desarrollado por <a href="https://www.facebook.com/share/192qzMpbjN/" target="_blank" rel="noopener noreferrer" class="fb-link">Ryu Tecnología</a> &copy; 2026 |</p>
+            <p class="font-serif-vintage text-base text-amberGold font-bold mb-1">Café Vintage "La Cafeta"</p>
+            <p class="mb-4 text-coffee-300">Calle Hacienda Real de Tultepec Pte. 129 A, Real de Tultepec</p>
+            <p class="text-[10px] text-coffee-500">© 2027 Café Vintage La Cafeta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para Detalle de Platillos -->
+    <div id="itemModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cardDark border border-coffee-700/80 rounded-2xl max-w-sm w-full p-6 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-coffee-400 hover:text-coffee-50 text-xl font-bold">✕</button>
+            <h3 id="modalTitle" class="font-bold text-xl text-coffee-50 font-serif-vintage mb-2"></h3>
+            <p id="modalDescription" class="text-xs text-coffee-300 leading-relaxed mb-4"></p>
+            <div class="flex justify-between items-center border-t border-coffee-800 pt-4">
+                <span id="modalPrice" class="text-xl font-bold text-amberGold"></span>
+                <a id="modalOrderBtn" href="#" target="_blank" class="bg-amberGold hover:bg-amber-600 text-coffee-950 font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Pedir este producto</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Interactividad -->
+    <script>
+        function filterMenu(category, btn) {
+            const items = document.querySelectorAll('.menu-item');
+            const tabs = document.querySelectorAll('.menu-tab');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-amberGold', 'text-coffee-950', 'font-bold', 'shadow-md');
+                tab.classList.add('bg-cardDark', 'text-coffee-200', 'border', 'border-coffee-800');
+            });
+
+            btn.classList.remove('bg-cardDark', 'text-coffee-200', 'border', 'border-coffee-800');
+            btn.classList.add('bg-amberGold', 'text-coffee-950', 'font-bold', 'shadow-md');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function searchMenu() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.menu-item');
+
+            items.forEach(item => {
+                const title = item.querySelector('.item-title').innerText.toLowerCase();
+                const desc = item.querySelector('p').innerText.toLowerCase();
+
+                if (title.includes(input) || desc.includes(input)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(title, desc, price) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = desc;
+            document.getElementById('modalPrice').innerText = price;
+            
+            const waUrl = `https://wa.me/525560126049?text=Hola,%20me%20gustaría%20ordenar:%20${encodeURIComponent(title)}`;
+            document.getElementById('modalOrderBtn').href = waUrl;
+
+            document.getElementById('itemModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('itemModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
