@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XV Años en el País de las Maravillas - Sofía</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=UnifrakturMaguntia&display=display" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              50: '#fdfbf7',
+              100: '#faf7f2',
+              200: '#f3ede2',
+              300: '#e7dbc7',
+              400: '#d7c4a5',
+            },
+            vintageRose: {
+              300: '#e8a5b2',
+              400: '#d98293',
+              500: '#c83751',
+              600: '#ab223b',
+              700: '#8a182d',
+            },
+            antiqueGold: {
+              300: '#f0d886',
+              400: '#e0c262',
+              500: '#d4af37',
+              600: '#b08d23',
+              700: '#8c6c13',
+            },
+            wonderBlue: {
+              100: '#eaf4f8',
+              200: '#cde4f0',
+              300: '#a3cde2',
+              500: '#5a9ec2',
+            },
+            emeraldLeaf: '#2d5a27',
+          },
+          fontFamily: {
+            gothic: ['"UnifrakturMaguntia"', 'cursive'],
+            cinzel: ['"Cinzel Decorative"', 'serif'],
+            garamond: ['"Cormorant Garamond"', 'serif'],
+            cursive: ['"Great Vibes"', 'cursive'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #faf7f2;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d4af37;
+      border-radius: 10px;
+    }
+
+    /* Parchment Background Pattern */
+    .parchment-bg {
+      background-color: #faf7f2;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08), transparent 70%),
+        radial-gradient(circle at 0% 100%, rgba(200, 55, 81, 0.05), transparent 50%);
+    }
+
+    /* Vintage Book Border Frame */
+    .vintage-border {
+      border: 2px solid #d4af37;
+      box-shadow: inset 0 0 0 4px #faf7f2, inset 0 0 0 6px #e0c262;
+    }
+
+    /* Glassmorphism Light Cards */
+    .glass-storybook {
+      background: rgba(253, 251, 247, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 10px 30px rgba(180, 140, 60, 0.08);
+    }
+
+    /* Storybook Book Envelope Opening Simulation */
+    .book-wrapper {
+      perspective: 1200px;
+    }
+
+    .storybook-cover {
+      width: 310px;
+      height: 420px;
+      background: linear-gradient(135deg, #2b1d14 0%, #4a3222 50%, #21150d 100%);
+      border-radius: 8px 16px 16px 8px;
+      border: 3px solid #d4af37;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6), inset 0 0 20px rgba(0,0,0,0.8);
+      transform-style: preserve-3d;
+      transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .storybook-cover::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: rgba(212, 175, 55, 0.6);
+      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    }
+
+    /* Wax Seal Badge */
+    .wax-seal {
+      width: 75px;
+      height: 75px;
+      background: radial-gradient(circle, #db3b58 0%, #c83751 60%, #8a182d 100%);
+      border-radius: 50%;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.5), inset 0 2px 5px rgba(255,255,255,0.4);
+      border: 3px dashed #f0d886;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.6s ease, opacity 0.4s ease;
+    }
+
+    .storybook-cover.open {
+      transform: rotateY(-140deg);
+    }
+
+    /* Confetti / Sparkle Floating Animation */
+    @keyframes sparkleFloat {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    }
+    .sparkle-particle {
+      position: absolute;
+      pointer-events: none;
+      animation: sparkleFloat 2s forwards ease-out;
+    }
+
+    /* Floating Key Rotation */
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(4deg); }
+    }
+    .float-soft {
+      animation: floatSoft 3.5s infinite ease-in-out;
+    }
+
+    /* Pulse Gold Glow */
+    @keyframes goldGlow {
+      0%, 100% { filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.4)); }
+      50% { filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.9)); }
+    }
+    .gold-glow {
+      animation: goldGlow 2.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="parchment-bg font-sans antialiased text-slate-800 min-h-screen flex justify-center items-center sm:py-8 sm:px-4 selection:bg-antiqueGold-500 selection:text-white">
+
+  <!-- ========================================================== -->
+  <!-- 1. VINTAGE STORYBOOK / PARCHMENT ENTRANCE SCREEN           -->
+  <!-- ========================================================== -->
+  <div id="entranceScreen" class="fixed inset-0 z-50 bg-stone-900/95 flex flex-col items-center justify-center p-4 transition-opacity duration-1000 overflow-hidden">
+    
+    <!-- Background Decor Elements -->
+    <div class="absolute inset-0 pointer-events-none opacity-20 flex justify-between p-8">
+      <span class="text-7xl text-antiqueGold-400 absolute top-10 left-10 float-soft"><i class="fa-solid fa-key"></i></span>
+      <span class="text-8xl text-vintageRose-400 absolute bottom-12 right-10"><i class="fa-solid fa-heart"></i></span>
+      <span class="text-9xl text-wonderBlue-200 absolute top-1/3 right-8"><i class="fa-solid fa-clock"></i></span>
+      <span class="text-8xl text-antiqueGold-300 absolute bottom-1/3 left-8"><i class="fa-solid fa-chess-queen"></i></span>
+    </div>
+
+    <!-- Entrance Title -->
+    <div class="text-center mb-6 z-10 px-4">
+      <p class="font-cursive text-4xl sm:text-5xl text-antiqueGold-300 mb-1 drop-shadow-md">Había una vez...</p>
+      <p class="font-garamond text-sm sm:text-base text-cream-200 tracking-widest uppercase italic">Un cuento de maravillas esperando ser abierto</p>
+    </div>
+
+    <!-- Storybook Entrance Cover -->
+    <div class="book-wrapper z-10 my-2" onclick="openStorybook()">
+      <div id="storybookCover" class="storybook-cover flex flex-col items-center justify-between p-6 text-center">
+        <!-- Frame Corner Decor -->
+        <div class="w-full flex justify-between text-antiqueGold-400 text-xs">
+          <span>♠</span><span class="text-vintageRose-400">♥</span>
+        </div>
+
+        <div class="my-auto flex flex-col items-center">
+          <span class="font-gothic text-antiqueGold-400 text-xl tracking-wider mb-2">Érase una vez</span>
+          <h2 class="font-cinzel text-2xl text-cream-100 font-bold tracking-widest my-1 border-b border-antiqueGold-500/50 pb-2">MIS 15 AÑOS</h2>
+          <p class="font-cursive text-5xl text-antiqueGold-300 my-2 gold-glow">Sofía</p>
+          <p class="font-garamond text-xs text-cream-300 italic tracking-wider">"Un día en el Jardín de las Maravillas"</p>
+        </div>
+
+        <!-- Wax Seal Button -->
+        <div id="waxSealObj" class="wax-seal gold-glow my-2 cursor-pointer">
+          <div class="text-center text-cream-100">
+            <span class="font-cinzel text-xl font-bold block leading-none">15</span>
+            <span class="text-[8px] uppercase font-semibold tracking-tighter">ABRIR</span>
+          </div>
+        </div>
+
+        <div class="w-full flex justify-between text-antiqueGold-400 text-xs">
+          <span>♦</span><span class="text-vintageRose-400">♣</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 float-soft flex items-center gap-2 text-antiqueGold-300 text-xs tracking-widest bg-stone-900/90 px-5 py-2.5 rounded-full border border-antiqueGold-500/40 z-10">
+      <i class="fa-solid fa-wand-magic-sparkles text-antiqueGold-400 text-sm"></i>
+      <span>Toca el sello real para ingresar al cuento</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================== -->
+  <!-- 2. MAIN MOBILE INVITATION APP CONTAINER                    -->
+  <!-- ========================================================== -->
+  <div id="mainContainer" class="w-full max-w-[430px] parchment-bg min-h-screen sm:min-h-[880px] sm:h-[880px] sm:rounded-[40px] shadow-2xl overflow-y-auto relative border-0 sm:border-[8px] border-stone-900 flex flex-col opacity-0 pointer-events-none transition-opacity duration-1000">
+    
+    <!-- Floating Music Pocket Watch Control -->
+    <button id="musicToggleBtn" onclick="toggleAudio()" class="fixed sm:absolute top-5 right-5 z-40 bg-cream-100/90 text-antiqueGold-700 p-3 rounded-full shadow-xl border-2 border-antiqueGold-500/80 transition-all duration-300 flex items-center justify-center w-12 h-12 active:scale-95 group" aria-label="Música Mágica">
+      <i id="musicIcon" class="fa-solid fa-stopwatch text-lg group-hover:rotate-45 transition-transform"></i>
+      <span id="musicBadge" class="absolute right-14 bg-stone-900 text-antiqueGold-300 text-[10px] px-2.5 py-1 rounded-md border border-antiqueGold-500/30 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Melodía Mágica</span>
+    </button>
+
+    <!-- Toast Notification Overlay -->
+    <div id="toast" class="fixed sm:absolute bottom-6 left-1/2 -translate-x-1/2 z-50 bg-stone-900 text-antiqueGold-300 text-xs px-4 py-2.5 rounded-full shadow-2xl border border-antiqueGold-500/40 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center gap-2">
+      <i class="fa-solid fa-sparkles text-antiqueGold-400"></i>
+      <span id="toastMsg">Copiado al portapapeles</span>
+    </div>
+
+
+    <!-- BOTANICAL STORYBOOK HERO SECTION -->
+    <section class="relative h-[580px] flex-shrink-0 flex flex-col justify-end text-center pb-12 px-6 overflow-hidden">
+      <!-- Background Image with Soft Light Overlay -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80" alt="Botanical Wonderland" class="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.05]">
+        <div class="absolute inset-0 bg-gradient-to-t from-cream-100 via-cream-100/40 to-stone-950/50"></div>
+      </div>
+
+      <!-- Top Suit Ribbon -->
+      <div class="absolute top-6 left-0 right-0 z-10 flex justify-center gap-4 text-antiqueGold-300 text-xs tracking-widest">
+        <span>♠</span><span class="text-vintageRose-400">♥</span><span>♦</span><span class="text-vintageRose-400">♣</span>
+      </div>
+
+      <!-- Hero Header Content -->
+      <div class="relative z-10 flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-cream-100/90 border border-antiqueGold-500/60 text-[10px] tracking-widest uppercase mb-3 text-antiqueGold-700 shadow-sm font-bold">
+          <i class="fa-solid fa-crown text-vintageRose-500 text-xs"></i>
+          <span>Mis XV Años • Cuento de Hadas</span>
+        </div>
+
+        <p class="font-garamond text-lg text-stone-800 italic font-semibold drop-shadow-sm">Te invito a celebrar los 15 Años de</p>
+        <h1 class="font-cursive text-7xl text-vintageRose-600 my-1 drop-shadow-md">Sofía</h1>
+        <p class="font-garamond text-xs tracking-widest text-stone-700 uppercase mb-5 font-bold">"Un día dorado en el Jardín de las Maravillas"</p>
+
+        <div class="flex items-center gap-2 text-xs tracking-wider text-cream-50 bg-stone-900/90 font-semibold px-5 py-2.5 rounded-full shadow-lg border border-antiqueGold-400">
+          <i class="fa-solid fa-calendar-heart text-antiqueGold-400"></i>
+          <span>Sábado, 15 de Noviembre 2026</span>
+        </div>
+      </div>
+
+      <!-- Storybook Wave Bottom -->
+      <div class="absolute bottom-0 left-0 right-0 h-10 parchment-bg rounded-t-[35px] z-20 border-t border-antiqueGold-300/40"></div>
+    </section>
+
+
+    <!-- DYNAMIC GUEST PERSONALIZATION CARD -->
+    <section class="px-6 -mt-4 mb-8 text-center z-20">
+      <div class="glass-storybook p-6 rounded-2xl border-2 border-antiqueGold-400/50 relative overflow-hidden shadow-md">
+        <div class="absolute top-2 right-3 text-vintageRose-500 text-xs opacity-50">♥</div>
+        <div class="absolute bottom-2 left-3 text-stone-700 text-xs opacity-50">♠</div>
+        <p class="text-[10px] text-antiqueGold-700 uppercase tracking-widest font-bold mb-1">Pase Personalizado de Entrada</p>
+        <h2 id="guestName" class="font-garamond text-2xl text-stone-900 font-bold">¡Apreciable Familia e Invitados!</h2>
+        <p id="guestPasses" class="text-xs text-stone-600 mt-1 font-medium">Tenemos 1 pase reservado en nuestro Jardín Real</p>
+      </div>
+    </section>
+
+
+    <!-- REAL-TIME COUNTDOWN TIMER -->
+    <section class="px-6 mb-10 text-center">
+      <div class="flex items-center justify-center gap-2 mb-3">
+        <i class="fa-solid fa-stopwatch text-vintageRose-500 text-sm"></i>
+        <p class="text-xs font-bold text-stone-800 uppercase tracking-widest">El tiempo corre (¡No llegues tarde!):</p>
+      </div>
+      <div class="grid grid-cols-4 gap-2">
+        <div class="bg-cream-100 p-3 rounded-2xl border border-antiqueGold-400/60 shadow-sm text-stone-900">
+          <span id="cdDays" class="font-cinzel text-xl font-bold text-vintageRose-600 block">00</span>
+          <span class="text-[9px] text-stone-500 uppercase font-semibold">Días</span>
+        </div>
+        <div class="bg-cream-100 p-3 rounded-2xl border border-antiqueGold-400/60 shadow-sm text-stone-900">
+          <span id="cdHours" class="font-cinzel text-xl font-bold text-vintageRose-600 block">00</span>
+          <span class="text-[9px] text-stone-500 uppercase font-semibold">Horas</span>
+        </div>
+        <div class="bg-cream-100 p-3 rounded-2xl border border-antiqueGold-400/60 shadow-sm text-stone-900">
+          <span id="cdMins" class="font-cinzel text-xl font-bold text-vintageRose-600 block">00</span>
+          <span class="text-[9px] text-stone-500 uppercase font-semibold">Min</span>
+        </div>
+        <div class="bg-cream-100 p-3 rounded-2xl border border-antiqueGold-400/60 shadow-sm text-stone-900">
+          <span id="cdSecs" class="font-cinzel text-xl font-bold text-vintageRose-600 block">00</span>
+          <span class="text-[9px] text-stone-500 uppercase font-semibold">Seg</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- VENUE & MAP LOCATIONS -->
+    <section class="px-6 mb-10 space-y-5">
+      <div class="text-center mb-2">
+        <h3 class="font-cursive text-4xl text-vintageRose-600">Nuestras Ubicaciones</h3>
+        <p class="font-garamond text-xs text-stone-600 italic">Los escenarios de nuestra celebración</p>
+      </div>
+
+      <!-- Ceremony Card -->
+      <div class="bg-cream-50 p-6 rounded-2xl border-2 border-antiqueGold-300 shadow-sm flex flex-col items-center text-center relative">
+        <div class="w-12 h-12 rounded-full bg-wonderBlue-100 text-wonderBlue-500 flex items-center justify-center text-xl mb-3 border border-wonderBlue-300">
+          <i class="fa-solid fa-church"></i>
+        </div>
+        <span class="text-[10px] uppercase tracking-widest font-bold text-antiqueGold-700 mb-0.5">La Capilla del Castillo</span>
+        <h4 class="font-garamond text-xl font-bold text-stone-900">Parroquia de Santa María del Mar</h4>
+        <p class="text-xs text-stone-600 mt-1 mb-3">Av. de los Rosales #210, Col. Bosques del Rey</p>
+        <div class="inline-flex items-center gap-2 text-xs font-semibold text-stone-800 bg-wonderBlue-100/60 px-3 py-1 rounded-full border border-wonderBlue-200 mb-4">
+          <i class="fa-regular fa-clock text-wonderBlue-500"></i>
+          <span>16:30 HRS</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2 w-full">
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 bg-stone-900 text-antiqueGold-300 text-xs py-2.5 px-3 rounded-xl font-medium transition-colors hover:bg-stone-800">
+            <i class="fa-map-location-dot text-vintageRose-400"></i>
+            <span>Google Maps</span>
+          </a>
+          <a href="https://waze.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 bg-stone-900 text-antiqueGold-300 text-xs py-2.5 px-3 rounded-xl font-medium transition-colors hover:bg-stone-800">
+            <i class="fa-brands fa-waze text-sky-400"></i>
+            <span>Waze</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Reception Card -->
+      <div class="bg-cream-50 p-6 rounded-2xl border-2 border-antiqueGold-300 shadow-sm flex flex-col items-center text-center relative">
+        <div class="w-12 h-12 rounded-full bg-vintageRose-300/30 text-vintageRose-600 flex items-center justify-center text-xl mb-3 border border-vintageRose-400/40">
+          <i class="fa-solid fa-mug-hot"></i>
+        </div>
+        <span class="text-[10px] uppercase tracking-widest font-bold text-vintageRose-600 mb-0.5">Jardín del Té del Sombrerero</span>
+        <h4 class="font-garamond text-xl font-bold text-stone-900">Jardín & Salón "Las Maravillas"</h4>
+        <p class="text-xs text-stone-600 mt-1 mb-3">Camino Antiguo a la Comarca #88</p>
+        <div class="inline-flex items-center gap-2 text-xs font-semibold text-stone-800 bg-vintageRose-300/20 px-3 py-1 rounded-full border border-vintageRose-300/40 mb-4">
+          <i class="fa-regular fa-clock text-vintageRose-600"></i>
+          <span>19:00 HRS</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2 w-full">
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 bg-stone-900 text-antiqueGold-300 text-xs py-2.5 px-3 rounded-xl font-medium transition-colors hover:bg-stone-800">
+            <i class="fa-map-location-dot text-vintageRose-400"></i>
+            <span>Google Maps</span>
+          </a>
+          <a href="https://waze.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 bg-stone-900 text-antiqueGold-300 text-xs py-2.5 px-3 rounded-xl font-medium transition-colors hover:bg-stone-800">
+            <i class="fa-brands fa-waze text-sky-400"></i>
+            <span>Waze</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TEA PARTY ITINERARY TIMELINE -->
+    <section class="px-6 mb-10">
+      <div class="text-center mb-6">
+        <h3 class="font-cursive text-4xl text-vintageRose-600">Itinerario del Jardín</h3>
+        <p class="font-garamond text-xs text-stone-600 italic">El programa del banquete</p>
+      </div>
+
+      <div class="relative border-l-2 border-antiqueGold-400/60 ml-4 pl-6 space-y-6">
+        <!-- Event 1 -->
+        <div class="relative">
+          <span class="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-wonderBlue-500 border-2 border-white"></span>
+          <span class="text-xs font-bold text-wonderBlue-500">16:30 HRS</span>
+          <h5 class="font-garamond text-base font-bold text-stone-900">Misa de Acción de Gracias</h5>
+          <p class="text-xs text-stone-600">Ceremonia en la Capilla del Castillo.</p>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="relative">
+          <span class="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-antiqueGold-500 border-2 border-white"></span>
+          <span class="text-xs font-bold text-antiqueGold-700">19:00 HRS</span>
+          <h5 class="font-garamond text-base font-bold text-stone-900">Coctel del Té & Recepción</h5>
+          <p class="text-xs text-stone-600">Ingreso de invitados al Jardín Mágico.</p>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="relative">
+          <span class="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-vintageRose-500 border-2 border-white"></span>
+          <span class="text-xs font-bold text-vintageRose-600">20:15 HRS</span>
+          <h5 class="font-garamond text-base font-bold text-stone-900">Vals Real & Entrada de Sofía</h5>
+          <p class="text-xs text-stone-600">Presentación oficial de la Quinceañera.</p>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="relative">
+          <span class="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-emeraldLeaf border-2 border-white"></span>
+          <span class="text-xs font-bold text-emeraldLeaf">21:00 HRS</span>
+          <h5 class="font-garamond text-base font-bold text-stone-900">Banquete de la Reina</h5>
+          <p class="text-xs text-stone-600">Cena de gala y brindis de honor.</p>
+        </div>
+
+        <!-- Event 5 -->
+        <div class="relative">
+          <span class="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-stone-900 border-2 border-white"></span>
+          <span class="text-xs font-bold text-stone-900">22:00 HRS</span>
+          <h5 class="font-garamond text-base font-bold text-stone-900">Baile Loco en el Jardín</h5>
+          <p class="text-xs text-stone-600">Apertura de pista y fiesta general.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- DRESS CODE & RESERVED COLORS -->
+    <section class="px-6 mb-10 text-center">
+      <div class="bg-stone-900 p-6 rounded-2xl border-2 border-antiqueGold-400 text-cream-100 shadow-lg">
+        <div class="w-12 h-12 mx-auto rounded-full bg-antiqueGold-400 text-stone-900 flex items-center justify-center text-xl mb-3 shadow-md">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <h4 class="font-garamond text-xl font-bold text-antiqueGold-300">Código de Vestimenta</h4>
+        <p class="text-xs font-bold uppercase tracking-wider text-cream-200 my-1">Rigurosa Etiqueta Formal</p>
+        <p class="text-xs text-stone-300 max-w-xs mx-auto">Agradecemos reservar los colores <strong class="text-wonderBlue-300">Azul Alicia</strong>, <strong class="text-vintageRose-300">Lila</strong> y <strong class="text-antiqueGold-300">Dorado</strong> exclusivamente para la festejar a Sofía.</p>
+      </div>
+    </section>
+
+
+    <!-- REGALOS / COFRE DEL SOMBRERERO -->
+    <section class="px-6 mb-10 text-center">
+      <div class="bg-cream-50 p-6 rounded-2xl border-2 border-antiqueGold-300 shadow-sm">
+        <div class="w-12 h-12 mx-auto rounded-full bg-antiqueGold-100 text-antiqueGold-700 flex items-center justify-center text-xl mb-3 border border-antiqueGold-300">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <h4 class="font-garamond text-xl font-bold text-stone-900">El Cofre del Sombrerero</h4>
+        <p class="text-xs text-stone-600 mt-1 mb-4">Tu presencia es nuestro mejor regalo. Si deseas obsequiar un detalle extra:</p>
+
+        <div class="flex flex-col gap-2.5">
+          <button onclick="openModal('bankModal')" class="w-full bg-cream-100 hover:bg-cream-200 text-stone-800 text-xs font-semibold py-3 px-4 rounded-xl border border-antiqueGold-300 transition-colors flex items-center justify-between shadow-sm">
+            <span class="flex items-center gap-2"><i class="fa-solid fa-envelope-open-text text-vintageRose-600"></i> Lluvia de Sobres / Dat. Bancarios</span>
+            <i class="fa-solid fa-chevron-right text-stone-400 text-[10px]"></i>
+          </button>
+
+          <a href="https://www.liverpool.com.mx" target="_blank" rel="noopener noreferrer" class="w-full bg-cream-100 hover:bg-cream-200 text-stone-800 text-xs font-semibold py-3 px-4 rounded-xl border border-antiqueGold-300 transition-colors flex items-center justify-between shadow-sm">
+            <span class="flex items-center gap-2"><i class="fa-solid fa-store text-antiqueGold-700"></i> Mesa de Regalos (Liverpool #987654)</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-stone-400 text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- RSVP / CONFIRMACION VIA WHATSAPP -->
+    <section class="px-6 mb-12">
+      <div class="bg-cream-50 p-6 rounded-2xl border-2 border-vintageRose-400 shadow-md text-center relative overflow-hidden">
+        <div class="w-12 h-12 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-3 border border-emerald-200">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <h3 class="font-garamond text-xl font-bold text-stone-900">Confirmar Asistencia</h3>
+        <p class="text-xs text-stone-600 mb-4">Por favor confirma tu asistencia antes del 1 de Noviembre</p>
+
+        <form id="rsvpForm" onsubmit="handleRSVP(event)" class="space-y-3 text-left">
+          <div>
+            <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Nombre Completo</label>
+            <input type="text" id="formName" required placeholder="Ej. Familia Rodríguez" class="w-full px-3.5 py-2.5 bg-cream-100 border border-antiqueGold-300 rounded-xl text-xs text-stone-800 focus:outline-none focus:border-vintageRose-500 transition-colors">
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">¿Asistirás?</label>
+              <select id="formAttendance" required class="w-full px-3 py-2.5 bg-cream-100 border border-antiqueGold-300 rounded-xl text-xs text-stone-800 focus:outline-none focus:border-vintageRose-500 transition-colors">
+                <option value="Sí asistiré">¡Sí, con gusto!</option>
+                <option value="No podré asistir">No podré asistir</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Pases</label>
+              <select id="formPasses" class="w-full px-3 py-2.5 bg-cream-100 border border-antiqueGold-300 rounded-xl text-xs text-stone-800 focus:outline-none focus:border-vintageRose-500 transition-colors">
+                <option value="1">1 Persona</option>
+                <option value="2">2 Personas</option>
+                <option value="3">3 Personas</option>
+                <option value="4">4 Personas</option>
+                <option value="5">5 Personas</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Mensaje para la Festejada</label>
+            <textarea id="formMessage" rows="2" placeholder="¡Muchas felicidades en tus 15 Años!" class="w-full px-3.5 py-2.5 bg-cream-100 border border-antiqueGold-300 rounded-xl text-xs text-stone-800 focus:outline-none focus:border-vintageRose-500 transition-colors resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl text-xs shadow-md transition-all flex items-center justify-center gap-2 active:scale-95">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Enviar Confirmación por WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="mt-auto bg-stone-900 text-white py-8 text-center border-t-2 border-antiqueGold-500 px-6">
+      <div class="text-antiqueGold-400 text-xs mb-2">♠ ♥ ♦ ♣</div>
+      <p class="font-cursive text-4xl text-antiqueGold-300">Sofía</p>
+      <p class="font-garamond text-xs text-cream-300 mt-1">15 de Noviembre, 2026 • Mis XV Años</p>
+    </footer>
+
+  </div>
+
+
+  <!-- BANK DETAILS MODAL -->
+  <div id="bankModal" class="fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-cream-100 rounded-2xl max-w-sm w-full p-6 text-center relative shadow-2xl border-2 border-antiqueGold-500">
+      <button onclick="closeModal('bankModal')" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700 p-1">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="w-12 h-12 mx-auto rounded-full bg-antiqueGold-200 text-antiqueGold-700 flex items-center justify-center text-xl mb-3 border border-antiqueGold-400">
+        <i class="fa-solid fa-building-columns"></i>
+      </div>
+      <h4 class="font-garamond text-xl font-bold text-stone-900">Cofre del Sombrerero</h4>
+      <p class="text-xs text-stone-600 mb-4">Datos bancarios para transferencia</p>
+
+      <div class="bg-cream-50 p-4 rounded-xl border border-antiqueGold-300 text-left space-y-3 text-xs mb-4">
+        <div>
+          <span class="text-[9px] text-stone-400 uppercase font-bold block">Banco</span>
+          <span class="font-semibold text-stone-800">BBVA México</span>
+        </div>
+        <div>
+          <span class="text-[9px] text-stone-400 uppercase font-bold block">Titular</span>
+          <span class="font-semibold text-stone-800">Sra. Carmen Salazar (Mamá)</span>
+        </div>
+        <div>
+          <span class="text-[9px] text-stone-400 uppercase font-bold block">CLABE Interbancaria</span>
+          <div class="flex items-center justify-between bg-white p-2 rounded border border-antiqueGold-300 mt-1">
+            <span class="font-mono text-stone-800 font-bold">0121 8001 5599 3412 88</span>
+            <button onclick="copyToClipboard('012180015599341288')" class="text-vintageRose-600 hover:text-vintageRose-800 text-xs font-semibold px-2.5 py-1 bg-vintageRose-300/20 rounded border border-vintageRose-300">
+              Copiar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="closeModal('bankModal')" class="w-full bg-stone-900 hover:bg-stone-800 text-antiqueGold-300 font-semibold py-2.5 rounded-xl text-xs transition-colors">
+        Cerrar
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ========================================================== -->
+  <!-- JAVASCRIPT LOGIC                                           -->
+  <!-- ========================================================== -->
+  <script>
+    // --- 1. Web Audio API Synthesizer (Music Box Lullaby) ---
+    let audioCtx = null;
+    let isPlaying = false;
+    let timerId = null;
+
+    // Alice Music Box Melody Frequency sequence
+    const aliceMelody = [
+      { note: 659.25, duration: 0.5 }, // E5
+      { note: 783.99, duration: 0.5 }, // G5
+      { note: 880.00, duration: 0.5 }, // A5
+      { note: 987.77, duration: 0.8 }, // B5
+      { note: 880.00, duration: 0.4 }, // A5
+      { note: 783.99, duration: 0.5 }, // G5
+      { note: 659.25, duration: 0.8 }, // E5
+      { note: 587.33, duration: 0.5 }, // D5
+      { note: 659.25, duration: 0.9 }, // E5
+    ];
+    let noteIdx = 0;
+
+    function playAliceNote() {
+      if (!isPlaying || !audioCtx) return;
+
+      const note = aliceMelody[noteIdx];
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(note.note, audioCtx.currentTime);
+
+      gain.gain.setValueAtTime(0, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + note.duration);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + note.duration);
+
+      noteIdx = (noteIdx + 1) % aliceMelody.length;
+      timerId = setTimeout(playAliceNote, note.duration * 920);
+    }
+
+    function startMusic() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      if (!isPlaying) {
+        isPlaying = true;
+        const musicIcon = document.getElementById('musicIcon');
+        if (musicIcon) musicIcon.className = "fa-solid fa-stopwatch text-lg text-vintageRose-600 animate-spin";
+        playAliceNote();
+      }
+    }
+
+    function toggleAudio() {
+      const musicIcon = document.getElementById('musicIcon');
+
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      if (!isPlaying) {
+        isPlaying = true;
+        musicIcon.className = "fa-solid fa-stopwatch text-lg text-vintageRose-600 animate-spin";
+        playAliceNote();
+        showToast("Melodía reanudada");
+      } else {
+        isPlaying = false;
+        clearTimeout(timerId);
+        musicIcon.className = "fa-solid fa-stopwatch text-lg text-antiqueGold-700";
+        showToast("Melodía pausada");
+      }
+    }
+
+
+    // --- 2. Storybook Opening & Sparkles Animation ---
+    let bookOpened = false;
+
+    function openStorybook() {
+      if (bookOpened) return;
+      bookOpened = true;
+
+      const storybookCover = document.getElementById('storybookCover');
+      const entranceScreen = document.getElementById('entranceScreen');
+      const mainContainer = document.getElementById('mainContainer');
+
+      // Add 3D open class
+      storybookCover.classList.add('open');
+
+      // Start Synthesized Audio
+      startMusic();
+
+      // Screen transition
+      setTimeout(() => {
+        entranceScreen.classList.add('opacity-0');
+      }, 1000);
+
+      setTimeout(() => {
+        entranceScreen.classList.add('hidden');
+        mainContainer.classList.remove('opacity-0', 'pointer-events-none');
+        mainContainer.classList.add('opacity-100');
+      }, 1800);
+    }
+
+
+    // --- 3. Dynamic Personalization ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestParam = urlParams.get('invitado');
+      const passesParam = urlParams.get('pases');
+
+      if (guestParam) {
+        document.getElementById('guestName').textContent = guestParam;
+        document.getElementById('formName').value = guestParam;
+      }
+      if (passesParam) {
+        const passesText = passesParam === '1' ? '1 pase reservado' : `${passesParam} pases reservados`;
+        document.getElementById('guestPasses').textContent = `Tenemos ${passesText} en nuestro Jardín Real`;
+        const select = document.getElementById('formPasses');
+        if (select && select.querySelector(`option[value="${passesParam}"]`)) {
+          select.value = passesParam;
+        }
+      }
+    });
+
+
+    // --- 4. Countdown Clock ---
+    const targetDate = new Date('2026-11-15T16:30:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById('cdDays').textContent = days < 10 ? '0' + days : days;
+        document.getElementById('cdHours').textContent = hours < 10 ? '0' + hours : hours;
+        document.getElementById('cdMins').textContent = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById('cdSecs').textContent = seconds < 10 ? '0' + seconds : seconds;
+      } else {
+        document.getElementById('cdDays').textContent = '00';
+        document.getElementById('cdHours').textContent = '00';
+        document.getElementById('cdMins').textContent = '00';
+        document.getElementById('cdSecs').textContent = '00';
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+
+    // --- 5. WhatsApp RSVP Generator ---
+    function handleRSVP(e) {
+      e.preventDefault();
+      const phone = "5215500000000"; // Target Phone
+      const name = document.getElementById('formName').value.trim();
+      const attendance = document.getElementById('formAttendance').value;
+      const passes = document.getElementById('formPasses').value;
+      const message = document.getElementById('formMessage').value.trim();
+
+      let text = `¡Hola Sofía! 🌹✨%0A%0A`;
+      text += `*Confirmación de Asistencia - XV Años Alicia* 👑%0A`;
+      text += `*Invitado:* ${encodeURIComponent(name)}%0A`;
+      text += `*Estatus:* ${encodeURIComponent(attendance)}%0A`;
+      text += `*Pases:* ${passes}%0A`;
+
+      if (message) {
+        text += `*Mensaje:* ${encodeURIComponent(message)}%0A`;
+      }
+
+      const waUrl = `https://wa.me/${phone}?text=${text}`;
+      window.open(waUrl, '_blank');
+    }
+
+
+    // --- 6. Clipboard Copy & Toast ---
+    function copyToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast("CLABE copiada al portapapeles");
+        }).catch(() => {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showToast("CLABE copiada al portapapeles");
+      } catch (err) {
+        showToast("Error al copiar");
+      }
+      document.body.removeChild(textArea);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2500);
+    }
+
+
+    // --- 7. Modal Controls ---
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
